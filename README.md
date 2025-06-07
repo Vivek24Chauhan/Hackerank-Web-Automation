@@ -1,25 +1,68 @@
 # Hackerank-Web-Automation
-This tool can be used to add moderators in the hackerrank contests --> The real purpose of the project is to learn Web Automation
-The dependencies used by me while making this project are :- 
-1.minimist //we are using minimist to read the arguments from client 
-2.puppeteer // for web automation 
-3.fs -> this library is pre installed in node
 
-The tasks performed while making the project are --> 
-1.Open the browser 
-2.Get a tab 
-3.Go to the url 
-4.Click on the login on first page of Hackerrank.
-5.Click on the login on second page of Hackerrank. 
-6.Type the Username on third page 
-7.Type the Password on third page 
-8.Click on the login on third page of Hackerrank. 
-9.Click on compete after successful logging in 
-10.Click on all the manage contests 
-11.Find the number of pages by clicking and inspecting on (Double RightAngledTriangles) Button 
-12.Now traverse on all the contest by clicking on RightPage Button(Single RightAngledTriangles Button). 
-13.Write function for handling loop for moving on all the page 
-14.Write function for handling loop for all contest on one page 
-15.While handling 1 contest , put loop for adding all the moderators in thw contest. 
-16.While adding moderator , select the input tag for adding moderator , then type the moderator id and then press Enter. 
-17.Then after adding all moderator , close the current contest , to traverse on all the contests of all pages.
+## Description
+
+**Hackerank-Web-Automation** is a Node.js tool that automates the process of adding moderators to HackerRank contests. The main purpose of this project is to learn and demonstrate web automation using Puppeteer.
+
+---
+
+## Features
+- Automates login to HackerRank.
+- Navigates to the "Compete" section and manages contests.
+- Traverses all contest pages and contests.
+- Adds multiple moderators to each contest automatically.
+- Handles dynamic navigation and input fields.
+
+---
+
+## Dependencies
+- [`minimist`](https://www.npmjs.com/package/minimist): For parsing command-line arguments.
+- [`puppeteer`](https://www.npmjs.com/package/puppeteer): For browser automation.
+- [`fs`](https://nodejs.org/api/fs.html): Node.js built-in module for file system operations.
+
+---
+
+## Usage
+
+1. **Install dependencies:**
+   ```sh
+   npm install minimist puppeteer
+   ```
+
+2. **Run the script:**
+   ```sh
+   node script.js --username <your-username> --password <your-password> --moderators <moderator-list-file>
+   ```
+   - Replace `script.js` with your main script filename.
+   - The moderator list file should contain moderator IDs, one per line.
+
+---
+
+## Workflow
+
+1. Open the browser using Puppeteer.
+2. Get a new tab and go to the HackerRank URL.
+3. Click login on the first and second pages.
+4. Enter username and password on the third page and log in.
+5. Click on "Compete" after logging in.
+6. Click on "Manage Contests".
+7. Determine the number of contest pages by inspecting navigation buttons.
+8. Traverse all contest pages using the right-arrow navigation.
+9. For each contest on a page:
+    - Open the contest.
+    - For each moderator:
+        - Select the input field, type the moderator’s ID, and press Enter.
+    - After adding all moderators, close the contest and move to the next.
+10. Repeat for all contests on all pages.
+
+---
+
+## Learning Outcomes
+- Practical experience with web automation using Puppeteer.
+- Understanding of DOM navigation, event handling, and dynamic content.
+- Practice with command-line argument parsing and file I/O in Node.js.
+
+---
+
+## Disclaimer
+This tool is for educational purposes only. Please ensure you comply with HackerRank’s terms of service and use automation responsibly.
